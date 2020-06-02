@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.event.Event;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +21,10 @@ public class Board implements IBoard {
     }
 
     public Square getLastSquare() {
-        return board.get(board.size()-1);
+        return board.get(board.size() - 1);
     }
 
-    private int getIndexOf(Square square){
+    private int getIndexOf(Square square) {
         return board.indexOf(square);
     }
 
@@ -30,8 +32,14 @@ public class Board implements IBoard {
     public void move(Player currentPlayer, int steps) {
         Square oldPosition = currentPlayer.getPosition();
         int i = getIndexOf(oldPosition);
-        Square newPosition = board.get(i+steps);
-        currentPlayer.setPosition(newPosition);
+        if ((i + steps) < numberOfSquares()) {
+            Square newPosition = board.get(i + steps);
+            currentPlayer.setPosition(newPosition);
+            System.out.println(currentPlayer.getNickname() + "\'s new position is " + (board.indexOf(currentPlayer.getPosition())+1));
+        } else {
+            currentPlayer.setPosition(oldPosition);
+            System.out.println(currentPlayer.getNickname() + " did not move");
+        }
     }
 
     private int numberOfSquares() {
@@ -52,4 +60,5 @@ public class Board implements IBoard {
     public boolean hasNext() {
         return false;
     }
+
 }

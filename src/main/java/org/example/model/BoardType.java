@@ -19,5 +19,19 @@ public enum BoardType {
         }
     };
 
+    // SPRINT(new BoardType(new Board()));
+    // SPRINT.getBoard().setSquares(...)
+    // CIRCULAR(new BoardType(new CircularBoard()));
+
+    /*private IBoard board;
+
+    BoardType(IBoard board) {
+        this.board = board;
+    }
+
+    public IBoard getBoard() {
+        return board;
+    }*/
+
     public abstract IBoard createBoard(List<Square> squares);
 }

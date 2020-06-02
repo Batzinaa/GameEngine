@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("snake square")
 public class SnakeSquare implements Square {
     private int stepsBackwards;
-    private boolean lastSquare;
 
     public SnakeSquare() {
     }
@@ -19,12 +18,9 @@ public class SnakeSquare implements Square {
 
     @Override
     public void execute(BoardGame boardGame) {
+        stepsBackwards = stepsBackwards*-1; // anti na pernaw arnitiko arithmo sto json apla ton pollaplasiazw me to -1
+        System.out.println(boardGame.currentPlayer().getNickname() + " stepped on a Snake! Move " + stepsBackwards*-1 + " steps backwards.");
         boardGame.moveCurrentPlayer(stepsBackwards);
-    }
-
-    @Override
-    public boolean isLastSquare() {
-        return false;
     }
 
     @JsonGetter

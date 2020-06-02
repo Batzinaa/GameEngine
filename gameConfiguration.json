@@ -1,115 +1,87 @@
 {
   "squares": [
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
       "type": "ladder square",
-      "stepsForward": 4,
-      "lastSquare": false
+      "stepsForward": 4
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
       "type": "snake square",
-      "stepsBackwards": 3,
-      "lastSquare": false
+      "stepsBackwards": 3
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
       "type": "ladder square",
-      "stepsForward": 2,
-      "lastSquare": false
+      "stepsForward": 2
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
       "type": "ladder square",
-      "stepsForward": 6,
-      "lastSquare": false
+      "stepsForward": 6
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
       "type": "ladder square",
-      "stepsForward": 5,
-      "lastSquare": false
+      "stepsForward": 5
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     },
     {
       "type": "snake square",
-      "stepsBackwards": 3,
-      "lastSquare": false
+      "stepsBackwards": 3
     },
     {
-      "type": "default square",
-      "lastSquare": false
+      "type": "default square"
     }
   ],
   "players": [
     {
-      "position": null,
-      "yourTurn": false,
       "nickname": "player1"
     },
     {
-      "position": null,
-      "yourTurn": false,
       "nickname": "player2"
     },
     {
-      "position": null,
-      "yourTurn": false,
       "nickname": "player3"
     },
     {
-      "position": null,
-      "yourTurn": false,
       "nickname": "player4"
     }
   ],
-  "boardType": "CIRCULAR",
+  "boardType": "SPRINT",
   "numberOfDice": 1,
   "numberOfPiecesPerPlayer": 1,
   "winningCondition": {

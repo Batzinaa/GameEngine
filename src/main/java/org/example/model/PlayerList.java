@@ -10,10 +10,7 @@ public class PlayerList {
 
     public PlayerList(List<Player> playerList) {
         this.playerList = new LinkedList<>(playerList);
-    }
-
-    public PlayerList(String[] playerNames) {
-        setPlayers(playerNames);
+        currentPlayer = getFirstPlayer();
     }
 
     public int getNumberOfPlayers() {
@@ -21,26 +18,20 @@ public class PlayerList {
     }
 
     public Player getNextPlayer() {
-            currentPlayer = playerList.poll();
-            playerList.offer(currentPlayer);
-            return currentPlayer;
+        currentPlayer = playerList.poll();
+        playerList.offer(currentPlayer);
+        return currentPlayer;
     }
 
     public Player getFirstPlayer() {
         return playerList.getFirst();
     }
 
-    private void setPlayers(String[] playerNames) {
-        System.out.println("Players are: ");
-        for (String str : playerNames) {
-            Player player = new Player(str);
-            playerList.add(player);
-            System.out.println(player.getNickname());
-        }
-    }
-
     public Player getCurrentPlayer() {
         return playerList.peek();
     }
 
+    public void setCurrentPlayer(Player player) {
+        this.currentPlayer = player;
+    }
 }

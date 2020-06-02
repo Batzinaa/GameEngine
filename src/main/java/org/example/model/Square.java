@@ -15,6 +15,4 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 })
 public interface Square {
     void execute(BoardGame boardGame);
-    boolean isLastSquare();
-
 }

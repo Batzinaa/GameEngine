@@ -12,4 +12,5 @@ public interface IBoard {
     void move(Player currentPlayer, int steps);
 
     Square getFirstSquare();
+
 }

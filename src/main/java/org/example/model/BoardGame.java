@@ -18,7 +18,7 @@ public class BoardGame {
         this.winningCondition = winningCondition;
     }
 
-    private boolean gameNotOver() {
+    private boolean gameOver() {
         return winningCondition.hasWon(this);
     }
 
@@ -27,7 +27,7 @@ public class BoardGame {
     }
 
     private void spawnPlayers() {
-        for (int i=0; i <playerList.getNumberOfPlayers(); i++){
+        for (int i = 0; i < playerList.getNumberOfPlayers(); i++) {
             playerList.getNextPlayer().setPosition(board.getFirstSquare());
         }
     }
@@ -35,8 +35,6 @@ public class BoardGame {
     void setWinner(Player currentPlayer) {
         winner = currentPlayer;
     }
-
-
 
     private Player getNextPlayer() {
         return playerList.getNextPlayer();
@@ -49,12 +47,17 @@ public class BoardGame {
 
     public void play() {
         startGame();
-        while (gameNotOver()) {
+        do {
+            getNextPlayer();
             Display.currentPlayer(currentPlayer());
             int nSteps = rollDice();
-            getNextPlayer();
-        }
+            moveCurrentPlayer(nSteps);
+        } while (!gameOver());
         Display.winner(winner);
+    }
+
+    void setCurrentPlayer(Player player) {
+        playerList.setCurrentPlayer(player);
     }
 
     Player currentPlayer() {
@@ -70,7 +73,8 @@ public class BoardGame {
     }
 
     void moveCurrentPlayer(int steps) {
-        board.move(currentPlayer(),steps);
+        board.move(currentPlayer(), steps);
         currentPlayer().getPosition().execute(this);
     }
+
 }

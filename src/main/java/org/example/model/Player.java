@@ -37,7 +37,6 @@ public class Player {
         this.playerNickname = playerNickname;
     }
 
-
     public void losesNextRound() {
         setYourTurn(false);
     }
